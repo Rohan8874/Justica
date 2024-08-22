@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+<!-- Mirrored from www.madebydesignesia.com/themes/justica/news.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Mar 2023 02:54:15 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Justica - Lawyer and Attorney Website Template</title>
+    <link rel="icon" href="{% static 'images/icon.png' %}" type="image/gif" sizes="16x16">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Justica - Lawyer and Attorney Website Template" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="author">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CSS Files
+    ================================================== -->
+    <link id="bootstrap" href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link id="bootstrap-grid" href="{% static 'css/bootstrap-grid.min.css' %}" rel="stylesheet" type="text/css" />
+    <link id="bootstrap-reboot" href="{% static 'css/bootstrap-reboot.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/jquery.countdown.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="{% static 'css/colors/scheme-01.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/coloring.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="topbar" class="text-white bg-color">
+            <div class="container">
+                <div class="topbar-left sm-hide">
+                    <span class="topbar-widget tb-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </span>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-right">
+                        <span class="topbar-widget"><a href="#">Privacy policy</a></span>
+                        <span class="topbar-widget"><a href="#">Request Quote</a></span>
+                        <span class="topbar-widget"><a href="#">FAQ</a></span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- header begin -->
+        <header class="transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="index">
+                                        <img alt="" class="logo" src="{% static 'images/logo-light.png' %}" />
+                                        <img alt="" class="logo-2" src="{% static 'images/logo.png' %}" />
+                                    </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <!-- mainmenu begin -->
+                                <ul id="mainmenu">
+                                    <li><a href="/index">Home</a>
+                                    </li>
+                                    <li><a href="about.html">About</a>
+                                        <ul>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="team.html">The Team</a></li>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="practice-areas.html">Practice Areas</a>
+                                        
+                                    </li>
+                                    <li><a href="/news">News</a>
+                                        <ul>
+                                            <li><a href="/news">News List</a></li>
+                                            <li><a href="/create">Create News</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                     <li><a href="#">Elements</a>
+                                       
+                                    </li>
+                                </ul>
+                                <!-- mainmenu close -->
+                            </div>
+                            <div class="de-flex-col">
+                                <div class="h-phone md-hide"><span>Need&nbsp;Help?</span><i class="fa fa-phone"></i> 1 200 300 9000</div>
+                                <span id="menu-btn"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section aria-label="section">
+            <div class="container">
+                <div class="row">
+                    {% for item in news_items %}
+                    <div class="col-lg-4 col-md-6 mb30">
+                        <div class="bloglist item">
+                            <div class="post-content">
+                                <div class="date-box">
+                                    <div class="m">{{ item.date|date:"M" }}</div>
+                                    <div class="d">{{ item.date|date:"d" }}</div>
+                                </div>
+                                <div class="post-image">
+                                    <img alt="{{ item.title }}" src="{{ item.image.url }}">
+                                </div>
+                                <div class="post-text">
+                                    <span class="p-tagline">{{ item.category }}</span>
+                                    <h4><a href="{{ item.url }}">{{ item.title }}<span></span></a></h4>
+                                    <p>{{ item.description }}</p>
+                                    <span class="p-author">{{ item.author }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="spacer-single"></div>
+                <ul class="pagination">
+                    <li><a href="#">Prev</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Form to add a new news item -->
+        <section>
+            <div class="container">
+                <h2>Add News Item</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+    </div>
+        <!-- content close -->
+        <a href="#" id="back-to-top"></a>
+        <!-- footer begin -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="widget">
+                            <a href="index.html"><img alt="" class="img-fluid mb20" src="{% static 'images/logo-light.png' %}"></a>
+                            <address class="s1">
+                                <span><i class="id-color fa fa-map-marker fa-lg"></i>08 W 36th St, New York, NY 10001</span>
+                                <span><i class="id-color fa fa-phone fa-lg"></i>+1 333 9296</span>
+                                <span><i class="id-color fa fa-envelope-o fa-lg"></i><a href="mailto:contact@example.com">contact@example.com</a></span>
+                                <span><i class="id-color fa fa-file-pdf-o fa-lg"></i><a href="#">Download Brochure</a></span>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="id-color mb20">Practice Areas</h5>
+                        <ul class="ul-style-2">
+                            <li>Corporate and M&A</li>
+                            <li>Construction and Real Estate</li>
+                            <li>Commercial Duspute Resolution</li>
+                            <li>Employment</li>
+                            <li>Banking and Finance</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="widget">
+                            <h5 class="id-color">Newsletter</h5>
+                            <p>Signup for our newsletter to get the latest news, updates and special offers in your inbox.</p>
+                            <form action="https://www.madebydesignesia.com/themes/justica/blank.php" class="row" id="form_subscribe" method="post" name="form_subscribe">
+                                <div class="col text-center">
+                                    <input class="form-control" id="name_1" name="name_1" placeholder="enter your email" type="text" /> <a href="#" id="btn-submit"><i class="fa fa-long-arrow-right"></i></a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                            <div class="spacer-10"></div>
+                            <small>Your email is safe with us. We don't spam.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                    &copy; Copyright 2022 - Justica by Designesia
+                                </div>
+                                <div class="de-flex-col">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+                                        <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <div id="preloader">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+    <script src="{% static 'js/easing.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/validation.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/enquire.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/jquery.plugin.js' %}"></script>
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/jarallax.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.js' %}"></script>
+    <script src="{% static 'js/designesia.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from www.madebydesignesia.com/themes/justica/news.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Mar 2023 02:54:16 GMT -->
+</html>
